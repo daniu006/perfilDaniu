@@ -1,0 +1,237 @@
+/* Contenedor principal */
+ion-content {
+  --background: linear-gradient(135deg, #2e3b3df3 50%, #0a1416 100%);
+}
+
+/* Header */
+ion-header ion-toolbar {
+  --background: #13444d;
+  --color: #ffffff;
+}
+
+ion-header ion-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+ion-back-button {
+  --color: #ffffff;
+}
+
+/* Contenedor del perfil */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100%;
+  padding: 20px 16px;
+}
+
+/* Tarjeta principal */
+.info-card {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  --background: #252326;
+}
+
+ion-card-content {
+  padding: 32px 24px !important;
+}
+
+/* Sección del avatar */
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.profile-avatar {
+  width: 120px !important;
+  height: 120px !important;
+  border: 4px solid #1f2c1f;
+  box-shadow: 0 4px 12px rgba(47, 94, 76, 0.4);
+  transition: all 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(47, 94, 76, 0.6);
+}
+
+/* Sección del nombre */
+.name-section {
+  text-align: center;
+  margin-bottom: 32px;
+
+  h1 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+  }
+
+  .subtitle {
+    color: #939473;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+/* Sección de información */
+.info-section {
+  margin-bottom: 24px;
+
+  ion-item {
+    --padding-start: 16px;
+    --inner-padding-end: 16px;
+    --border-radius: 12px;
+    --background: #13444d;
+    --color: #ffffff;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(79, 120, 78, 0.4);
+      transform: translateY(-2px);
+      --background: #15423271;
+    }
+
+    ion-icon {
+      color: #0180b3;
+      font-size: 24px;
+      margin-right: 16px;
+    }
+
+    ion-label h3 {
+      color: #939473;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+    }
+
+    ion-label p {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    ion-icon[slot="end"] {
+      color: #939473;
+      font-size: 20px;
+    }
+  }
+
+  ion-item[button] {
+    cursor: pointer;
+  }
+}
+
+/* Sección del botón */
+.button-section {
+  margin-top: 32px;
+
+  ion-button {
+    --background: linear-gradient(135deg, #4f784e 0%, #2d5e4c 100%);
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(79, 120, 78, 0.4);
+    height: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    --color: #ffffff;
+
+    &:hover {
+      --box-shadow: 0 6px 16px rgba(79, 120, 78, 0.6);
+      transform: translateY(-2px);
+      --background: linear-gradient(135deg, #2d5e4c 0%, #13444d 100%);
+    }
+
+    ion-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+/* Responsive - Móviles */
+@media (max-width: 576px) {
+  .profile-container {
+    padding: 12px 8px;
+  }
+
+  .info-card {
+    border-radius: 12px;
+  }
+
+  ion-card-content {
+    padding: 20px 16px !important;
+  }
+
+  .profile-avatar {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .name-section h1 {
+    font-size: 24px;
+  }
+
+  .name-section .subtitle {
+    font-size: 14px;
+  }
+
+  .info-section ion-item {
+    --padding-start: 12px;
+    --inner-padding-end: 12px;
+
+    ion-icon {
+      font-size: 20px;
+      margin-right: 12px;
+    }
+
+    ion-label h3 {
+      font-size: 12px;
+    }
+
+    ion-label p {
+      font-size: 14px;
+    }
+  }
+
+  .button-section ion-button {
+    height: 46px;
+    font-size: 15px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.info-section ion-item {
+  animation: fadeInUp 0.5s ease-out;
+  
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.2s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+}

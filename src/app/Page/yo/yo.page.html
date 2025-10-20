@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/user" text="Volver"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="profile-container">
+    <ion-card class="info-card">
+      <ion-card-content>
+        
+        <!-- Avatar/Foto -->
+        <div class="avatar-section">
+          <ion-avatar class="profile-avatar">
+            <ion-img src="assets/icon/gato.jpg"></ion-img>
+          </ion-avatar>
+        </div>
+
+        <!-- Nombre -->
+        <div class="name-section">
+          <h1>Daniu</h1>
+        </div>
+
+        <!-- Información Personal -->
+        <div class="info-section">
+          
+          <ion-item lines="none">
+            <ion-icon name="school-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h3>Carrera</h3>
+              <p>Desarrollo de Software</p>
+            </ion-label>
+          </ion-item>
+
+<ion-item lines="none">
+            <ion-icon name="book-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h3>Ciclo</h3>
+              <p>Tercer Ciclo</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h3>Edad</h3>
+              <p>18 años</p>
+            </ion-label>
+          </ion-item>
+
+          
+          <ion-item lines="none" class="static-info">
+          <ion-label>
+            <h3>Correo</h3>
+            <p>dpabad@sudamericano.edu.ec</p>
+          </ion-label>
+        </ion-item>
+          <ion-item lines="none" button (click)="openGithub()">
+            <ion-icon name="logo-github" slot="start"></ion-icon>
+            <ion-label>
+              <h3>GitHub</h3>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+        </ion-item>
+
+        </div>
+
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
