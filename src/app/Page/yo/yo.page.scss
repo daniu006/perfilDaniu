@@ -1,9 +1,9 @@
-/* Contenedor principal */
+
 ion-content {
   --background: linear-gradient(135deg, #2e3b3df3 50%, #0a1416 100%);
 }
 
-/* Header */
+
 ion-header ion-toolbar {
   --background: #13444d;
   --color: #ffffff;
@@ -18,7 +18,7 @@ ion-back-button {
   --color: #ffffff;
 }
 
-/* Contenedor del perfil */
+
 .profile-container {
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@ ion-back-button {
   padding: 20px 16px;
 }
 
-/* Tarjeta principal */
+
 .info-card {
   max-width: 600px;
   width: 100%;

@@ -15,7 +15,8 @@ import {
   IonAvatar,
   IonImg,
   IonBackButton,
-  IonButtons
+  IonButtons,
+  ModalController
 } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { addIcons } from 'ionicons';
@@ -25,8 +26,11 @@ import {
   bookOutline, 
   logoGithub, 
   chevronForwardOutline,
-  arrowBackOutline
+  arrowBackOutline,
+  sendOutline,
+  saveOutline
 } from 'ionicons/icons';
+import { ClueModalComponent } from '../clue-modal/clue-modal.component';
 
 @Component({
   selector: 'app-yo',
@@ -54,24 +58,42 @@ import {
   ],
 })
 export class YoPage implements OnInit {
-  constructor() {
-    // Registrar los iconos que se usarán
+  
+  constructor(private modalController: ModalController) {
     addIcons({
       'school-outline': schoolOutline,
       'calendar-outline': calendarOutline,
       'book-outline': bookOutline,
       'logo-github': logoGithub,
       'chevron-forward-outline': chevronForwardOutline,
-      'arrow-back-outline': arrowBackOutline
+      'arrow-back-outline': arrowBackOutline,
+      'send-outline': sendOutline,
+      'save-outline': saveOutline
     });
   }
 
   ngOnInit() {
   }
 
-  // Método para abrir el perfil de GitHub
   openGithub() {
     window.open('https://github.com/daniu006', '_blank');
   }
 
+  async guardarDatos() {
+    await this.showModal('save', 'Todos los datos han sido guardados correctamente');
+  }
+
+  async showModal(type: 'record' | 'error' | 'save', message: string) {
+    const modal = await this.modalController.create({
+      component: ClueModalComponent,
+      componentProps: {
+        type: type,
+        message: message
+      },
+      cssClass: 'custom-modal',
+      backdropDismiss: false
+    });
+
+    await modal.present();
+  }
 }

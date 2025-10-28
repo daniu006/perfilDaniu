@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar [color]="getToolbarColor()">
+    <ion-title>{{ getTitle() }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="modal-container">
+    <div class="icon-container" [ngClass]="type">
+      <ion-icon [name]="getIcon()" size="large"></ion-icon>
+    </div>
+    
+    <div class="message-container">
+      <h2>{{ getTitle() }}</h2>
+      <p>{{ message }}</p>
+    </div>
+
+    <ion-button 
+      expand="block" 
+      [color]="getButtonColor()" 
+      (click)="closeModal()">
+      Aceptar
+    </ion-button>
+  </div>
+</ion-content>

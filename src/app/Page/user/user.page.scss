@@ -1,5 +1,4 @@
 
-/* Color del encabezado */
 ion-header ion-toolbar {
   --background: #13444d;
   --color: #ffffff;
@@ -10,7 +9,6 @@ ion-header ion-title {
   font-weight: 600;
 }
 
-/* Centrado del contenido */
 .ion-text-center {
   display: flex;
   justify-content: center;
@@ -19,7 +17,6 @@ ion-header ion-title {
   padding: 20px 16px;
 }
 
-/* Tarjeta del perfil */
 ion-card {
   max-width: 600px;
   width: 100%;
@@ -33,7 +30,6 @@ ion-card-content {
   padding: 32px 24px !important;
 }
 
-/* Avatar */
 ion-avatar {
   margin: 0 auto 24px !important;
   width: 150px !important;
